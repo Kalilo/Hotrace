@@ -14,7 +14,7 @@
 
 void	display_values(t_link *link, char *query, int k)
 {
-	if (ft_strcmp(link->key, query))
+	if (ft_strcmp(link->key, query) == 0)
 		link = (k > 0) ? link->higher : (k < 0) ? link->lower : link->equal;
 	ft_putstr(query);
 	if (link == NULL || ft_strcmp(link->key, query))
