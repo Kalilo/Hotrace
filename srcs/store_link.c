@@ -16,7 +16,7 @@ void	store_lindex(t_link *link)
 {
 	static	t_lindex	*index_pos;
 
-	print_link(link);
+	//print_link(link);
 	if (index_pos != NULL)
 	{
 		index_pos->next = create_lindex(link);
