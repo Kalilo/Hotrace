@@ -53,6 +53,12 @@ typedef struct		s_lindex
 	struct s_lindex	*next;
 }					t_lindex;
 
+typedef struct		s_query
+{
+	char			*query;
+	struct s_query	*next;
+}					t_query;
+
 /*
 ** ----------\
 ** Global     |
@@ -63,10 +69,12 @@ typedef struct		s_lindex
 
 	t_link			*g_index[27];
 	t_lindex		*g_lindex;
+	t_query			*g_query;
 # else
 
 	extern t_link	*g_index[27];
 	extern t_lindex	*g_lindex;
+	extern t_query	*g_query;
 # endif
 
 /*
@@ -99,6 +107,21 @@ int					get_line(int fd, char **line);
 ** getnextline.c
 */
 int					get_next_line(const int fd, char **line);
+/*
+** init.c
+*/
+void				init_globals(void);
+/*
+** links.c
+*/
+t_link				*create_link(char *key, char *value);
+void				destroy_link(t_link *link);
+/*
+** putstr.c
+*/
+void				ft_putstr(char const *s);
+void				ft_putendl(char const *s);
+void				ft_putchar(char const c);
 
 /*
 **                                /----------\                                **

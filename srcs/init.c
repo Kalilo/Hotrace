@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khansman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/03 07:52:51 by khansman          #+#    #+#             */
-/*   Updated: 2016/12/03 07:52:52 by khansman         ###   ########.fr       */
+/*   Created: 2016/12/03 08:40:55 by khansman          #+#    #+#             */
+/*   Updated: 2016/12/03 08:40:56 by khansman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define MAIN_FILE
 #include "../includes/hotrace.h"
 
-int		main()
+void	init_globals(void)
 {
-	init_globals();
-	printf("It compiles\n");
+	ft_bzero(&g_index, sizeof(t_link *) * 27);
+	g_lindex = NULL;
 }

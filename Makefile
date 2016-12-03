@@ -29,6 +29,8 @@ SRCS_NAME = ft_bzero.c						\
 			getline.c						\
 			getnextline.c					\
 			main.c							\
+			init.c							\
+			links.c							\
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 
