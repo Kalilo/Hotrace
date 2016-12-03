@@ -21,9 +21,7 @@ int		main()
 		ft_putendl("Failed to read input.\n");
 		return (0);
 	}
-	//printf("It reads!\n");
 	find_values();
-	//printf("It searches!\n");
 	free_lindex();
 	free_query();
 }
