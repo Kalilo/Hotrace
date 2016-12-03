@@ -41,3 +41,13 @@ t_lindex	*create_lindex(t_link *link)
 	index->next = NULL;
 	return (index);
 }
+
+t_query		*create_query(char *query)
+{
+	t_query		*q;
+
+	q = (t_query *)malloc(sizeof(t_query));
+	q->query = query;
+	q->next = NULL;
+	return (q);
+}

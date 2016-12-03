@@ -28,9 +28,29 @@ static void	readkey(void)
 		free(key);
 }
 
+static void	readquery(void)
+{
+	char		*query;
+	t_query		*pos;
+
+	while (get_next_line(0, &query))
+	{
+		if (g_query)
+		{
+			pos->next = create_query(query);
+			pos = pos->next;
+		}
+		else
+		{
+			g_query = create_query(query);
+			pos = g_query;
+		}
+	}
+}
+
 char		read_input(void)
 {
 	readkey();
-	//
-	return (1);//
+	readquery();
+	return (g_query != NULL);
 }

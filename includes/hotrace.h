@@ -122,6 +122,7 @@ void				init_globals(void);
 t_link				*create_link(char *key, char *value);
 void				destroy_link(t_link *link);
 t_lindex			*create_lindex(t_link *link);
+t_query				*create_query(char *query);
 /*
 ** putstr.c
 */
