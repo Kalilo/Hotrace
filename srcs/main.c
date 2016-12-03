@@ -16,5 +16,6 @@
 int		main()
 {
 	init_globals();
-	printf("It compiles\n");
+	read_input();
+	printf("It runs!\n");
 }

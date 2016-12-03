@@ -14,7 +14,7 @@
 
 void	init_globals(void)
 {
-	ft_bzero(&g_index, sizeof(t_link *) * 27);
+	ft_bzero(&g_index, sizeof(t_link *) * 53);
 	g_lindex = NULL;
 	g_query = NULL;
 }

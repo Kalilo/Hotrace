@@ -47,7 +47,7 @@ t_link	*find_link_pos(t_link *pos, char *key)
 		}
 		else
 		{
-			if (pos->key[k])
+			while (pos->key[k] && (pos->key[k] == key[k]))
 				k++;
 			if (pos->equal)
 				pos = pos->equal;

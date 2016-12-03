@@ -14,7 +14,7 @@
 
 t_link		*create_link(char *key, char *value)
 {
-	t_link	*link;
+	t_link		*link;
 
 	link = (t_link *)malloc(sizeof(t_link));
 	link->key = key;
@@ -30,4 +30,14 @@ void		destroy_link(t_link *link)
 	free(link->key);
 	free(link->value);
 	free(link);
+}
+
+t_lindex	*create_lindex(t_link *link)
+{
+	t_lindex	*index;
+
+	index = (t_lindex *)malloc(sizeof(t_lindex));
+	index->ptr = link;
+	index->next = NULL;
+	return (index);
 }
