@@ -22,7 +22,7 @@ int		main()
 		return (0);
 	}
 	//printf("It reads!\n");
-//	find_values();
+	find_values();
 	//printf("It searches!\n");
 	free_lindex();
 	free_query();
