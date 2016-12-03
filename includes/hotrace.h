@@ -67,12 +67,12 @@ typedef struct		s_query
 
 # ifdef MAIN_FILE
 
-	t_link			*g_index[27];
+	t_link			*g_index[53];
 	t_lindex		*g_lindex;
 	t_query			*g_query;
 # else
 
-	extern t_link	*g_index[27];
+	extern t_link	*g_index[53];
 	extern t_lindex	*g_lindex;
 	extern t_query	*g_query;
 # endif
@@ -83,6 +83,10 @@ typedef struct		s_query
 ** ----------/
 */
 
+/*
+** algo.c
+*/
+int					find_index(char key);
 /*
 ** ft_bzero.c
 */

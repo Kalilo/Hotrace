@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khansman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/03 08:40:55 by khansman          #+#    #+#             */
-/*   Updated: 2016/12/03 08:40:56 by khansman         ###   ########.fr       */
+/*   Created: 2016/12/03 09:57:56 by khansman          #+#    #+#             */
+/*   Updated: 2016/12/03 09:57:58 by khansman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/hotrace.h"
-
-void	init_globals(void)
+int		find_index(char key)
 {
-	ft_bzero(&g_index, sizeof(t_link *) * 27);
-	g_lindex = NULL;
-	g_query = NULL;
+	if ('a' <= key && key <= 'z')
+		return (key - 'a');
+	else if ('A' <= key && key <= 'Z')
+		return (key - 39);
+	else
+		return (52);
 }

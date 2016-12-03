@@ -22,7 +22,8 @@ INCLUDES_PATH = includes/
 
 SRCS_PATH = srcs/
 
-SRCS_NAME = ft_bzero.c						\
+SRCS_NAME = algo.c							\
+			ft_bzero.c						\
 			ft_memcpy.c						\
 			ft_strcmp.c						\
 			ft_strnew.c						\
@@ -31,6 +32,8 @@ SRCS_NAME = ft_bzero.c						\
 			main.c							\
 			init.c							\
 			links.c							\
+			putstr.c						\
+			readinput.c						\
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 
