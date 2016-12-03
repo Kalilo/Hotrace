@@ -21,7 +21,7 @@ int		main()
 		ft_putendl("Failed to read input.\n");
 		return (0);
 	}
-	find_values();
+	//find_values();
 	free_lindex();
 	free_query();
 }
