@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/hotrace.h"
-
+/*
 void	display_values(t_link *link, char *query, int k)
 {
 	if (ft_strcmp(link->key, query) != 0)
@@ -42,14 +42,7 @@ void	find_values(void)
 		k = strcmp(link->key, query->query);
 		//
 		display_values(link, query->query, k);
-		/*ft_putstr(query->query);
-		if (link == NULL)
-			ft_putendl(": Not Found");
-		else
-		{
-			ft_putstr(": ");
-			ft_putendl(link->value);
-		}*/
 		query = query->next;
 	}
 }
+*/
