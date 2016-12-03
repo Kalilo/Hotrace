@@ -52,5 +52,5 @@ char		read_input(void)
 {
 	readkey();
 	readquery();
-	return (g_query != NULL);
+	return (g_query != NULL && g_lindex != NULL);
 }
