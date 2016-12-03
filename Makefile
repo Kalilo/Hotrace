@@ -12,7 +12,7 @@
 
 NAME = hotrace
 
-CFLAGS =	-Wall -Wextra -Werror -g -g3 -O3 -Og
+CFLAGS =	-Wall -Wextra -Werror -g -g3
 
 CFLAGS2 =	-Wall -Wextra -Werror -g -g3 -O3 -Og
 
@@ -22,13 +22,13 @@ INCLUDES_PATH = includes/
 
 SRCS_PATH = srcs/
 
-SRCS_NAME = ft_bzero.c					\
-			ft_memcpy.c					\
-			ft_strcmp.c					\
-			ft_strnew.c					\
-			getline.c					\
-			getnextline.c				\
-			main.c						\
+SRCS_NAME = ft_bzero.c						\
+			ft_memcpy.c						\
+			ft_strcmp.c						\
+			ft_strnew.c						\
+			getline.c						\
+			getnextline.c					\
+			main.c							\
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 
@@ -48,7 +48,8 @@ INCLUDES = -I includes/
  
 #INCLUDES = -I includes/ -I libft/includes -I /usr/X11/include
 
-HEADER = 	$(INCLUDES_PATH)hotrace.h	\
+HEADER = 	$(INCLUDES_PATH)hotrace.h		\
+			%(INCLUDES_PATH)getnextline.h	\
 
 all: qme odir $(NAME)
 
