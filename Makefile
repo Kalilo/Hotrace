@@ -33,7 +33,8 @@ SRCS_NAME = algo.c							\
 			init.c							\
 			links.c							\
 			putstr.c						\
-			readinput.c						\
+			read_input.c					\
+			store_link.c					\
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 

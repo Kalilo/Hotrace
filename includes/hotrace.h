@@ -87,6 +87,7 @@ typedef struct		s_query
 ** algo.c
 */
 int					find_index(char key);
+t_link				*find_link_pos(t_link *pos, char *key);
 /*
 ** ft_bzero.c
 */
@@ -126,6 +127,14 @@ void				destroy_link(t_link *link);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
 void				ft_putchar(char const c);
+/*
+** read_input.c
+*/
+char				read_input(void);
+/*
+** store_link.c
+*/
+void				store_link(char *key, char *value);
 
 /*
 **                                /----------\                                **
