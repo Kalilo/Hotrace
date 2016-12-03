@@ -39,6 +39,7 @@ void	store_link(char *key, char *value)
 	link = create_link(key, value);
 	if (!g_index[index])
 	{
+		store_lindex(link);
 		g_index[index] = link;
 		return ;
 	}
