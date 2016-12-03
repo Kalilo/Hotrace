@@ -23,6 +23,7 @@ INCLUDES_PATH = includes/
 SRCS_PATH = srcs/
 
 SRCS_NAME = algo.c							\
+			find_values.c					\
 			ft_bzero.c						\
 			ft_memcpy.c						\
 			ft_strcmp.c						\

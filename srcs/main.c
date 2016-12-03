@@ -17,5 +17,6 @@ int		main()
 {
 	init_globals();
 	read_input();
-	printf("It runs!\n");
+	printf("It reads!\n");
+	find_values();
 }

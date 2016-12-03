@@ -89,6 +89,10 @@ typedef struct		s_query
 int					find_index(char key);
 t_link				*find_link_pos(t_link *pos, char *key);
 /*
+** find_values.c
+*/
+void				find_values(void);
+/*
 ** ft_bzero.c
 */
 void				ft_bzero(void *s, size_t n);
