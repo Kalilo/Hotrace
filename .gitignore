@@ -31,3 +31,8 @@
 # Debug files
 *.dSYM/
 *.su
+
+#Other
+._*
+.DS_Store
+._.DS_Store
