@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hotrace.h                                          :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khansman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/03 07:24:29 by khansman          #+#    #+#             */
-/*   Updated: 2016/12/03 07:24:32 by khansman         ###   ########.fr       */
+/*   Created: 2016/11/13 16:52:58 by khansman          #+#    #+#             */
+/*   Updated: 2016/11/13 16:53:28 by khansman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HOTRACE_H
-# define HOTRACE_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 /*
 ** ----------\
@@ -23,8 +23,8 @@
 # include <sys/uio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include <string.h>
+
+//# include "./libft/includes/libft.h"
 
 /*
 ** ----------\
@@ -32,17 +32,41 @@
 ** ----------/
 */
 
+# define BUFF_SIZE 32
+
+# define NUM_BUFF  10
+# define LINE_SIZE 50
+
+/*
+** Short_hand
+*/
+# define ACTIVE    buff->active
+# define POS       buff->pos
+# define AB_POS    (buff->pos % BUFF_SIZE)
+# define BUFF      buff->buff
+# define B_FD      buff->fd
+# define RET       buff->ret
+# define L         buff->l
+# define LINE      buff->line
+
+# define BUFF_END (BUFF[POS] == '\0' && RET < BUFF_SIZE)
+
 /*
 ** ----------\
 ** Structures |
 ** ----------/
 */
 
-/*
-** ----------\
-** Global     |
-** ----------/
-*/
+typedef struct	s_buff
+{
+	char		buff[BUFF_SIZE];
+	char		active;
+	int			fd;
+	int			ret;
+	int			pos;
+	int			l;
+	char		*line;
+}				t_buff;
 
 /*
 ** ----------\
@@ -50,30 +74,7 @@
 ** ----------/
 */
 
-/*
-** ft_bzero.c
-*/
-void		ft_bzero(void *s, size_t n);
-/*
-** ft_memcpy.c
-*/
-void		*ft_memcpy(void *dest, const void *src, size_t n);
-/*
-** ft_strcmp.c
-*/
-int			ft_strcmp(const char *s1, const char *s2);
-/*
-** ft_strnew.c
-*/
-char		*ft_strnew(size_t size);
-/*
-** getline.c
-*/
-int			get_line(int fd, char **line);
-/*
-** getnextline.c
-*/
-int			get_next_line(const int fd, char **line);
+int				get_next_line(const int fd, char **line);
 
 /*
 **                                /----------\                                **
