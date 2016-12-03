@@ -147,6 +147,12 @@ char				read_input(void);
 */
 void				store_link(char *key, char *value);
 
+
+/*
+** debug.c
+*/
+void	print_link(t_link *link);//debug
+
 /*
 **                                /----------\                                **
 ** ----- ----- ----- ----- ----- |  The End   | ----- ----- ----- ----- ----- **

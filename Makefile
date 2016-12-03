@@ -23,6 +23,7 @@ INCLUDES_PATH = includes/
 SRCS_PATH = srcs/
 
 SRCS_NAME = algo.c							\
+			debug.c							\
 			find_values.c					\
 			free.c							\
 			ft_bzero.c						\

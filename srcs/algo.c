@@ -30,17 +30,18 @@ t_link	*find_link_pos(t_link *pos, char *key)
 	k = 0;
 	while (pos != NULL)
 	{
+		//print_link(pos);
 		diff = pos->key[k] - key[k];
 		if (diff > 0)
 		{
-			if (pos->higher)
+			if (pos->higher != NULL)
 				pos = pos->higher;
 			else
 				return (pos);
 		}
 		else if (diff < 0)
 		{
-			if (pos->lower)
+			if (pos->lower != NULL)
 				pos = pos->lower;
 			else
 				return (pos);
@@ -49,7 +50,7 @@ t_link	*find_link_pos(t_link *pos, char *key)
 		{
 			while (pos->key[k] && (pos->key[k] == key[k]))
 				k++;
-			if (pos->equal)
+			if (pos->equal != NULL)
 				pos = pos->equal;
 			else
 				return (pos);
