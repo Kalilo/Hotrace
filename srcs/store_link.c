@@ -32,7 +32,7 @@ void	store_lindex(t_link *link)
 void	store_link(char *key, char *value)
 {
 	t_link				*link;
-	t_link				*tmp;
+	t_link				**tmp;
 	int					index;
 
 	index = find_index(*key);
@@ -43,12 +43,6 @@ void	store_link(char *key, char *value)
 		return ;
 	}
 	tmp = find_link_pos(g_index[index], link->key);
-	index = ft_strcmp(g_index[index]->key, link->key);
-	if (index > 0)
-		tmp->higher = link;
-	else if (index < 0)
-		tmp->lower = link;
-	else
-		tmp->equal = link;
+	*tmp = link;
 	store_lindex(link);
 }

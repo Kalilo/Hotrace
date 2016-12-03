@@ -22,7 +22,7 @@ int		find_index(char key)
 		return (52);
 }
 
-t_link	*find_link_pos(t_link *pos, char *key)
+t_link	**find_link_pos(t_link *pos, char *key)
 {
 	char	diff;
 	int		k;
@@ -32,28 +32,29 @@ t_link	*find_link_pos(t_link *pos, char *key)
 	{
 		//print_link(pos);
 		diff = pos->key[k] - key[k];
+		//diff = (strcmp(pos->key, key));
 		if (diff > 0)
 		{
 			if (pos->higher != NULL)
 				pos = pos->higher;
 			else
-				return (pos);
+				return ((&pos->higher));
 		}
 		else if (diff < 0)
 		{
 			if (pos->lower != NULL)
 				pos = pos->lower;
 			else
-				return (pos);
+				return ((&pos->lower));
 		}
 		else
 		{
-			while (pos->key[k] && (pos->key[k] == key[k]))
+			while (pos->key[k] && key[k] && (pos->key[k] == key[k]))
 				k++;
 			if (pos->equal != NULL)
 				pos = pos->equal;
 			else
-				return (pos);
+				return ((&pos->equal));
 		}
 	}
 	return (NULL);
