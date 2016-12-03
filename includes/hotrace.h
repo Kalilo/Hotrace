@@ -93,6 +93,11 @@ t_link				*find_link_pos(t_link *pos, char *key);
 */
 void				find_values(void);
 /*
+** free.c
+*/
+void				free_lindex(void);
+void				free_query(void);
+/*
 ** ft_bzero.c
 */
 void				ft_bzero(void *s, size_t n);

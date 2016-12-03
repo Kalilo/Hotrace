@@ -19,7 +19,7 @@ static void	readkey(void)
 
 	while (get_next_line(0, &key))
 	{
-		if (*key == '\0')
+		if (*key == '\0' && g_lindex != NULL)
 			break ;
 		get_next_line(0, &value);
 		store_link(key, value);

@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khansman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/03 07:52:51 by khansman          #+#    #+#             */
-/*   Updated: 2016/12/03 07:52:52 by khansman         ###   ########.fr       */
+/*   Created: 2016/12/03 15:47:22 by khansman          #+#    #+#             */
+/*   Updated: 2016/12/03 15:47:23 by khansman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define MAIN_FILE
 #include "../includes/hotrace.h"
 
-int		main()
+void	free_lindex(void)
 {
-	init_globals();
-	if (!read_input())
+	while (g_lindex != NULL)
 	{
-		ft_putendl("Failed to read input.\n");
-		return (0);
+		destroy_link(g_lindex->ptr);
+		g_lindex = g_lindex->next;
 	}
-	printf("It reads!\n");
-	find_values();
-	printf("It searches!\n");
-	free_lindex();
-	free_query();
+}
+
+void	free_query(void)
+{
+	while (g_query != NULL)
+	{
+		free(g_query->query);
+		g_query = g_query->next;
+	}
 }

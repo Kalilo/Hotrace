@@ -24,6 +24,7 @@ SRCS_PATH = srcs/
 
 SRCS_NAME = algo.c							\
 			find_values.c					\
+			free.c							\
 			ft_bzero.c						\
 			ft_memcpy.c						\
 			ft_strcmp.c						\
