@@ -32,6 +32,9 @@
 ** ----------/
 */
 
+# define NEXT1(X) if(pos->X!=NULL)pos=pos->X;else return((&pos->X))
+# define NEXT2(X) if(pos->X!=NULL)pos=pos->X;else return(NULL)
+
 /*
 ** ----------\
 ** Structures |
