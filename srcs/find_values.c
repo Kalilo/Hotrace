@@ -22,9 +22,9 @@ void	find_values(void)
 	{
 		result = search_for_key(g_index[find_index(query->query[0])],
 			query->query);
-		//ft_putstr(query->query);
 		if (result != NULL)
 		{
+		//	ft_putstr(query->query);
 		//	ft_putstr(": ");
 			ft_putendl(result);
 			//ft_putstr(".\n");
