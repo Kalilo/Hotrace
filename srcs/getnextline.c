@@ -26,78 +26,52 @@ static void		remalloc(char **line, int len)
 	}
 }
 
-static void		get_buff(t_buff **buff, int fd)
-{
-	static t_buff	buffs[NUM_BUFF];
-	int				k;
-
-	k = -1;
-	while (++k < NUM_BUFF)
-		if (buffs[k].active && buffs[k].fd == fd)
-		{
-			*buff = &buffs[k];
-			return ;
-		}
-	k = -1;
-	while (++k < NUM_BUFF)
-	{
-		if (!buffs[k].active)
-		{
-			ft_bzero(&buffs[k], sizeof(t_buff));
-			buffs[k].fd = fd;
-			*buff = &buffs[k];
-			return ;
-		}
-	}
-	ft_bzero(&buffs[0], sizeof(t_buff));
-	buffs[0].fd = fd;
-	*buff = &buffs[0];
-}
-
 static int		read_line(t_buff *buff)
 {
-	if (!ACTIVE)
-		ACTIVE = 1;
-	else if (RET < BUFF_SIZE)
+	if (!buff->active)
+		buff->active = 1;
+	else if (buff->ret < BUFF_SIZE)
 	{
-		ACTIVE = 0;
-		RET = 0;
+		buff->active = 0;
+		buff->ret = 0;
 		return (0);
 	}
 	else
-		ft_bzero(&BUFF, BUFF_SIZE);
-	RET = read(B_FD, BUFF, BUFF_SIZE);
-	POS = 0;
-	if (RET == -1)
+		ft_bzero(&buff->buff, BUFF_SIZE);
+	buff->ret = read(buff->fd, buff->buff, BUFF_SIZE);
+	buff->pos = 0;
+	if (buff->ret == -1)
 	{
-		ACTIVE = 0;
-		return (RET);
+		buff->active = 0;
+		return (buff->ret);
 	}
 	return (1);
 }
 
-int				get_next_line(const int fd, char **line)
+
+int     get_next_line(const int fd, char **line)
 {
-	t_buff			*buff;
+	static t_buff       buff;
 
 	if (BUFF_SIZE < 1 || line == NULL)
 		return (-1);
-	get_buff(&buff, fd);
-	if ((!ACTIVE || (POS > RET)) && !read_line(buff))
-		return (RET);
+		buff.fd = fd;
+	//get_buff(&buff, fd);
+	if ((!buff.active || (buff.pos > buff.ret)) && !read_line(&buff))
+		return (buff.ret);
 	L = -1;
-	while (BUFF[POS] != '\n' && BUFF[POS] != 26)
+	while (buff.buff[buff.pos] != '\n' && buff.buff[buff.pos] != 26)
 	{
-		if (POS > RET && !read_line(buff))
-			return (RET);
-		if (BUFF[POS] == '\n' || BUFF[POS] == 26)
+		if (buff.pos > buff.ret && !read_line(&buff))
+			return (buff.ret);
+		if (buff.buff[buff.pos] == '\n' || buff.buff[buff.pos] == 26)
 			break ;
 		if (((L + 1) % LINE_SIZE) == 0 || L == -1)
 			remalloc(&LINE, L);
-		LINE[++L] = BUFF[POS];
-		POS++;
+		LINE[++L] = buff.buff[buff.pos];
+		buff.pos++;
 	}
 	*line = (L == -1) ? ft_strnew(4) : LINE;
-	POS++;
+	buff.pos++;
 	return (1);
 }
