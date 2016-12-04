@@ -159,11 +159,6 @@ void				readquery(void);
 void				store_link(char *key, char *value);
 
 /*
-** debug.c
-*/
-void				print_link(t_link *link);
-
-/*
 **                                /----------\                                **
 ** ----- ----- ----- ----- ----- |  The End   | ----- ----- ----- ----- ----- **
 **                                \----------/                                **
