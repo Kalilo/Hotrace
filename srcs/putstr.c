@@ -49,9 +49,8 @@ void	ft_write(int fd, char const *s, size_t len)
 	LOOP_START;
 	while (c < WRITE_BUFF && i < len)
 	{
-		b[c] = s[i];
+		b[c++] = s[i];
 		i++;
-		c++;
 	}
 	if (c == WRITE_BUFF && !(c = 0))
 	{
