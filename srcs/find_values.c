@@ -11,52 +11,17 @@
 /* ************************************************************************** */
 
 #include "../includes/hotrace.h"
-/*
-void	display_values(t_link *link, char *query, int k)
-{
-	if (ft_strcmp(link->key, query) != 0)
-		link = (k > 0) ? link->higher : (k < 0) ? link->lower : link->equal;
-	ft_putstr(query);
-	if (link == NULL || ft_strcmp(link->key, query))
-		ft_putendl(": Not Found.");
-	else
-	{
-		do {
-			ft_putstr(": ");
-			ft_putendl(link->value);
-			link = link->equal;
-		} while (link != NULL && !ft_strcmp(link->key, query));
-	}
-}
-
-void	find_values(void)
-{
-	t_query	*query;
-	t_link	*link;
-	int		k;
-
-	query = g_query;
-	while (query != NULL)
-	{
-		link = find_link_pos(g_index[find_index(query->query[0])], query->query);
-		k = strcmp(link->key, query->query);
-		//
-		display_values(link, query->query, k);
-		query = query->next;
-	}
-}
-*/
 
 void	find_values(void)
 {
 	char	*result;
 	t_query	*query;
 
-	//start = search_for_key(g_index[find_index])
 	query = g_query;
 	while (query != NULL)
 	{
-		result = search_for_key(g_index[find_index(query->query[0])], query->query);
+		result = search_for_key(g_index[find_index(query->query[0])],
+			query->query);
 		ft_putstr(query->query);
 		ft_putstr(": ");
 		ft_putendl((result != NULL) ? result : "Not Found.");
