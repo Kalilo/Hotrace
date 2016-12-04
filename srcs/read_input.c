@@ -12,7 +12,7 @@
 
 #include "../includes/hotrace.h"
 
-static void	readkey(void)
+void		readkey(void)
 {
 	char		*key;
 	char		*value;
@@ -26,7 +26,7 @@ static void	readkey(void)
 		free(key);
 }
 
-static void	readquery(void)
+void	readquery(void)
 {
 	char		*query;
 	t_query		*pos;
@@ -44,11 +44,4 @@ static void	readquery(void)
 			pos = g_query;
 		}
 	}
-}
-
-char		read_input(void)
-{
-	readkey();
-	readquery();
-	return (g_query != NULL && g_lindex != NULL);
 }

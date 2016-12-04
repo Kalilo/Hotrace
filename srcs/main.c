@@ -16,7 +16,9 @@
 int		main(void)
 {
 	init_globals();
-	if (!read_input())
+	readkey();
+	readquery();
+	if (g_query == NULL || g_lindex == NULL)
 	{
 		ft_putendl("Failed to read input.\n");
 		return (0);

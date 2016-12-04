@@ -152,7 +152,8 @@ void				ft_write(int fd, char const *s, size_t len);
 /*
 ** read_input.c
 */
-char				read_input(void);
+void				readkey(void);
+void				readquery(void);
 /*
 ** store_link.c
 */
