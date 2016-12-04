@@ -50,11 +50,13 @@ t_link	**find_link_pos(t_link *pos, char *key)
 }
 
 
-char		*search_for_key(t_link *pos, char *key)
+void		search_for_key(t_link *pos, char *key)
 {
 	char	diff;
 	int		k;
+
 	k = 0;
+	g_ret = NULL;
 	while (pos != NULL)
 	{
 		diff = pos->key[k] - key[k];
@@ -71,9 +73,10 @@ char		*search_for_key(t_link *pos, char *key)
 			while (pos->key[k] && key[k] && (pos->key[k] == key[k]))
 				k++;
 			if (!pos->key[k] && !key[k] && !ft_strcmp(pos->key, key))
-				return (pos->value);
+				g_ret = pos->value;
+				
 			NEXT2(equal);
 		}
 	}
-	return (NULL);
+	//return (ret);
 }
