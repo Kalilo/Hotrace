@@ -24,7 +24,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-//# include "./libft/includes/libft.h"
+/*
+** Debug:
+** # include "./libft/includes/libft.h"
+*/
 
 /*
 ** ----------\

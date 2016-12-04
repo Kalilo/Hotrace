@@ -12,9 +12,15 @@
 
 #include "../includes/hotrace.h"
 
+/*
+** Debug lines:
+** ft_putstr(query->query);
+** ft_putstr(": ");
+** ft_putstr(".\n");
+*/
+
 void	find_values(void)
 {
-//	char	*result;
 	t_query	*query;
 
 	query = g_query;
@@ -24,10 +30,7 @@ void	find_values(void)
 			query->query);
 		if (g_ret)
 		{
-		//	ft_putstr(query->query);
-		//	ft_putstr(": ");
 			ft_putendl(g_ret);
-			//ft_putstr(".\n");
 		}
 		else
 		{

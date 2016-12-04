@@ -34,7 +34,10 @@
 
 # define WRITE_BUFF 4096
 # define NEXT1(X) if(pos->X!=NULL)pos=pos->X;else return((&pos->X))
-# define NEXT2(X) if(pos->X!=NULL)pos=pos->X;else return 
+# define NEXT2(X) if(pos->X!=NULL)pos=pos->X;else return
+
+# define LOOP_START start:
+# define LOOP_END goto start
 
 /*
 ** ----------\
@@ -71,16 +74,16 @@ typedef struct		s_query
 
 # ifdef MAIN_FILE
 
-	t_link			*g_index[53];
-	t_lindex		*g_lindex;
-	t_query			*g_query;
-	char			*g_ret;
+t_link				*g_index[53];
+t_lindex			*g_lindex;
+t_query				*g_query;
+char				*g_ret;
 # else
 
-	extern t_link	*g_index[53];
-	extern t_lindex	*g_lindex;
-	extern t_query	*g_query;
-	extern char		*g_ret;
+extern t_link		*g_index[53];
+extern t_lindex		*g_lindex;
+extern t_query		*g_query;
+extern char			*g_ret;
 # endif
 
 /*
@@ -155,11 +158,10 @@ char				read_input(void);
 */
 void				store_link(char *key, char *value);
 
-
 /*
 ** debug.c
 */
-void				print_link(t_link *link);//debug
+void				print_link(t_link *link);
 
 /*
 **                                /----------\                                **

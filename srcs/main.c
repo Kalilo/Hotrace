@@ -13,7 +13,7 @@
 #define MAIN_FILE
 #include "../includes/hotrace.h"
 
-int		main()
+int		main(void)
 {
 	init_globals();
 	if (!read_input())

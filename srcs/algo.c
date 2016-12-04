@@ -6,13 +6,13 @@
 /*   By: khansman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/03 09:57:56 by khansman          #+#    #+#             */
-/*   Updated: 2016/12/03 09:57:58 by khansman         ###   ########.fr       */
+/*   Updated: 2016/12/04 14:47:49 by khansman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/hotrace.h"
 
-int		find_index(char key)
+int			find_index(char key)
 {
 	if ('a' <= key && key <= 'z')
 		return (key - 'a');
@@ -22,7 +22,7 @@ int		find_index(char key)
 		return (52);
 }
 
-t_link	**find_link_pos(t_link *pos, char *key)
+t_link		**find_link_pos(t_link *pos, char *key)
 {
 	char	diff;
 	int		k;
@@ -49,7 +49,6 @@ t_link	**find_link_pos(t_link *pos, char *key)
 	return (NULL);
 }
 
-
 void		search_for_key(t_link *pos, char *key)
 {
 	char	diff;
@@ -74,9 +73,7 @@ void		search_for_key(t_link *pos, char *key)
 				k++;
 			if (!pos->key[k] && !key[k] && !ft_strcmp(pos->key, key))
 				g_ret = pos->value;
-				
 			NEXT2(equal);
 		}
 	}
-	//return (ret);
 }

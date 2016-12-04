@@ -28,6 +28,7 @@ void	free_lindex(void)
 void	free_query(void)
 {
 	t_query	*tmp;
+
 	while (g_query != NULL)
 	{
 		free(g_query->query);

@@ -24,7 +24,7 @@ void	store_lindex(t_link *link)
 	else
 	{
 		g_lindex = create_lindex(link);
-		index_pos = g_lindex;	
+		index_pos = g_lindex;
 	}
 }
 

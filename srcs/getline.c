@@ -19,7 +19,7 @@ static char	*ft_re_malloc(char *line, size_t size)
 	tmp = ft_strnew(size + 50);
 	if (size > 0)
 	{
-		ft_memcpy(tmp, line, size + 1);//eddited this line
+		ft_memcpy(tmp, line, size + 1);
 		free(line);
 	}
 	return (tmp);

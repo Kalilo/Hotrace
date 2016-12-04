@@ -6,7 +6,7 @@
 /*   By: khansman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/03 08:45:29 by khansman          #+#    #+#             */
-/*   Updated: 2016/12/03 08:45:30 by khansman         ###   ########.fr       */
+/*   Updated: 2016/12/04 14:52:20 by khansman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,14 @@ void	ft_putendl(char const *s)
 
 void	ft_putchar(char const c)
 {
-	
 	ft_write(1, &c, 1);
 }
 
 void	ft_write(int fd, char const *s, size_t len)
 {
-	static int		c;//counter for buffsize
+	static int		c;
 	size_t			i;
-    static char		b[WRITE_BUFF];
+	static char		b[WRITE_BUFF];
 
 	if (s == NULL)
 	{
@@ -47,7 +46,7 @@ void	ft_write(int fd, char const *s, size_t len)
 		return ;
 	}
 	i = 0;
-	start:
+	LOOP_START;
 	while (c < WRITE_BUFF && i < len)
 	{
 		b[c] = s[i];
@@ -57,6 +56,6 @@ void	ft_write(int fd, char const *s, size_t len)
 	if (c == WRITE_BUFF && !(c = 0))
 	{
 		write(fd, b, WRITE_BUFF + 1);
-		goto start;
+		LOOP_END;
 	}
 }
