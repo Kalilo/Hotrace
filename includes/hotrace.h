@@ -34,7 +34,7 @@
 
 # define WRITE_BUFF 4096
 # define NEXT1(X) if(pos->X!=NULL)pos=pos->X;else return((&pos->X))
-# define NEXT2(X) if(pos->X!=NULL)pos=pos->X;else return(NULL)
+# define NEXT2(X) if(pos->X!=NULL)pos=pos->X;else return 
 
 /*
 ** ----------\
@@ -74,11 +74,13 @@ typedef struct		s_query
 	t_link			*g_index[53];
 	t_lindex		*g_lindex;
 	t_query			*g_query;
+	char			*g_ret;
 # else
 
 	extern t_link	*g_index[53];
 	extern t_lindex	*g_lindex;
 	extern t_query	*g_query;
+	extern char		*g_ret;
 # endif
 
 /*
@@ -92,7 +94,7 @@ typedef struct		s_query
 */
 int					find_index(char key);
 t_link				**find_link_pos(t_link *pos, char *key);
-char				*search_for_key(t_link *pos, char *key);
+void				search_for_key(t_link *pos, char *key);
 /*
 ** find_values.c
 */
@@ -157,7 +159,7 @@ void				store_link(char *key, char *value);
 /*
 ** debug.c
 */
-void	print_link(t_link *link);//debug
+void				print_link(t_link *link);//debug
 
 /*
 **                                /----------\                                **

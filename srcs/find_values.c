@@ -14,19 +14,19 @@
 
 void	find_values(void)
 {
-	char	*result;
+//	char	*result;
 	t_query	*query;
 
 	query = g_query;
 	while (query != NULL)
 	{
-		result = search_for_key(g_index[find_index(query->query[0])],
+		search_for_key(g_index[find_index(query->query[0])],
 			query->query);
-		if (result != NULL)
+		if (g_ret)
 		{
 		//	ft_putstr(query->query);
 		//	ft_putstr(": ");
-			ft_putendl(result);
+			ft_putendl(g_ret);
 			//ft_putstr(".\n");
 		}
 		else
