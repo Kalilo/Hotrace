@@ -6,7 +6,7 @@
 /*   By: khansman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/03 07:53:13 by khansman          #+#    #+#             */
-/*   Updated: 2016/12/03 07:53:14 by khansman         ###   ########.fr       */
+/*   Updated: 2016/12/04 16:14:13 by khansman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,13 @@ static int		read_line(t_buff *buff)
 	return (1);
 }
 
-
-int			get_next_line(const int fd, char **line)
+int				get_next_line(const int fd, char **line)
 {
-	static t_buff       buff;
+	static t_buff	buff;
 
 	if (BUFF_SIZE < 1 || line == NULL)
 		return (-1);
-		buff.fd = fd;
+	buff.fd = fd;
 	if ((!buff.active || (buff.pos > buff.ret)) && !read_line(&buff))
 		return (buff.ret);
 	L = -1;
