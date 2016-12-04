@@ -17,10 +17,8 @@ static void	readkey(void)
 	char		*key;
 	char		*value;
 
-	while (get_next_line(0, &key))
+	while (get_next_line(0, &key) && *key)
 	{
-		if (*key == '\0')
-			break ;
 		get_next_line(0, &value);
 		store_link(key, value);
 	}
