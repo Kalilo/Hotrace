@@ -49,14 +49,13 @@ static int		read_line(t_buff *buff)
 }
 
 
-int     get_next_line(const int fd, char **line)
+int			get_next_line(const int fd, char **line)
 {
 	static t_buff       buff;
 
 	if (BUFF_SIZE < 1 || line == NULL)
 		return (-1);
 		buff.fd = fd;
-	//get_buff(&buff, fd);
 	if ((!buff.active || (buff.pos > buff.ret)) && !read_line(&buff))
 		return (buff.ret);
 	L = -1;
