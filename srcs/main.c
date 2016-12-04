@@ -24,4 +24,5 @@ int		main()
 	find_values();
 	free_lindex();
 	free_query();
+	ft_write(1, NULL, 1);
 }

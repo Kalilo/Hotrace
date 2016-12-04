@@ -32,7 +32,7 @@ void	find_values(void)
 		else
 		{
 			ft_putstr(query->query);
-			write(1, ": Not found.\n", 13);
+			ft_write(1, ": Not found.\n", 13);
 		}
 		query = query->next;
 	}
