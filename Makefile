@@ -12,9 +12,9 @@
 
 NAME = hotrace
 
-CFLAGS =	-Wall -Wextra -Werror -g -g3 -O3
+CFLAGS =	-Wall -Wextra -Werror -O3
 
-CFLAGS2 =	-Wall -Wextra -Werror -g -g3 -O3 -Og
+CFLAGS2 =	-Wall -Wextra -Werror -O3
 
 CC = gcc
 
