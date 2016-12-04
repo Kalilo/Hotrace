@@ -32,12 +32,6 @@ static void	readkey(void)
 
 	while (get_next_line(0, &key) && *key)
 	{
-<<<<<<< HEAD
-=======
-		if (*key == '\0')
-			break ;
-		clear_str(key);
->>>>>>> 48364f0b4745ffb6d652dcfa7780fdfe7c096408
 		get_next_line(0, &value);
 		clear_str(value);
 		store_link(key, value);
