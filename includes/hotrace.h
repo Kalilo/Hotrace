@@ -39,6 +39,9 @@
 # define LOOP_START start:
 # define LOOP_END goto start
 
+# define RE_N_INC_L remalloc(&LINE, L); L++
+# define E_INC else k++; buff.pos++
+
 /*
 ** ----------\
 ** Structures |
