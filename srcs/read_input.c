@@ -12,6 +12,19 @@
 
 #include "../includes/hotrace.h"
 
+void		clear_str(char *str)
+{
+	int		k;
+
+	k = 0;
+	while (str[k])
+	{
+		if (str[k] && (str[k] < 32 || str[k] > 126))
+			str[k] = str[k + 1];
+		k++;
+	}
+}
+
 static void	readkey(void)
 {
 	char		*key;
@@ -19,7 +32,14 @@ static void	readkey(void)
 
 	while (get_next_line(0, &key) && *key)
 	{
+<<<<<<< HEAD
+=======
+		if (*key == '\0')
+			break ;
+		clear_str(key);
+>>>>>>> 48364f0b4745ffb6d652dcfa7780fdfe7c096408
 		get_next_line(0, &value);
+		clear_str(value);
 		store_link(key, value);
 	}
 	if (key && !*key)
@@ -33,6 +53,7 @@ static void	readquery(void)
 
 	while (get_next_line(0, &query))
 	{
+		clear_str(query);
 		if (g_query)
 		{
 			pos->next = create_query(query);
