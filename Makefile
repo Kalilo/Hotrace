@@ -58,7 +58,7 @@ INCLUDES = -I includes/
 #INCLUDES = -I includes/ -I libft/includes -I /usr/X11/include
 
 HEADER = 	$(INCLUDES_PATH)hotrace.h		\
-			%(INCLUDES_PATH)getnextline.h	\
+			$(INCLUDES_PATH)getnextline.h	\
 
 all: qme odir $(NAME)
 
