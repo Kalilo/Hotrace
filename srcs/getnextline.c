@@ -66,7 +66,8 @@ int				get_next_line(const int fd, char **line)
 			break ;
 		if (((L + 1) % LINE_SIZE) == 0 || L == -1)
 			remalloc(&LINE, L);
-		LINE[++L] = buff.buff[buff.pos];
+		if (buff.buff[buff.pos] > 31 && buff.buff[buff.pos] < 127)
+			LINE[++L] = buff.buff[buff.pos];
 		buff.pos++;
 	}
 	*line = (L == -1) ? ft_strnew(4) : LINE;
