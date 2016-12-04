@@ -88,6 +88,7 @@ typedef struct		s_query
 */
 int					find_index(char key);
 t_link				**find_link_pos(t_link *pos, char *key);
+char				*search_for_key(t_link *pos, char *key);
 /*
 ** find_values.c
 */

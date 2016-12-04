@@ -59,3 +59,41 @@ t_link	**find_link_pos(t_link *pos, char *key)
 	}
 	return (NULL);
 }
+
+
+char		*search_for_key(t_link *pos, char *key)
+{
+	char	diff;
+	int		k;
+	k = 0;
+	while (pos != NULL)
+	{
+		diff = pos->key[k] - key[k];
+		if (diff > 0)
+		{
+			if (pos->higher != NULL)
+				pos = pos->higher;
+			else
+				return (NULL);
+		}
+		else if (diff < 0)
+		{
+			if (pos->lower != NULL)
+				pos = pos->lower;
+			else
+				return (NULL);
+		}
+		else
+		{
+			while (pos->key[k] && key[k] && (pos->key[k] == key[k]))
+				k++;
+			if (!pos->key[k] && !key[k] && !ft_strcmp(pos->key, key))
+				return (pos->value);
+			if (pos->equal != NULL)
+				pos = pos->equal;
+			else
+				return (NULL);
+		}
+	}
+	return (NULL);
+}
