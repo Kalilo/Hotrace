@@ -24,7 +24,7 @@ void	find_values(void)
 			query->query);
 		ft_putstr(query->query);
 		ft_putstr(": ");
-		ft_putendl((result != NULL) ? result : "Not Found.");
+		ft_putendl((result != NULL) ? result : "Not found.");
 		query = query->next;
 	}
 }
