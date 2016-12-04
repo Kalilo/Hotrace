@@ -6,7 +6,7 @@
 #    By: ggroener <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/28 11:16:22 by ggroener          #+#    #+#              #
-#    Updated: 2016/10/08 10:32:05 by khansman         ###   ########.fr        #
+#    Updated: 2016/12/04 17:14:27 by smahomed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ SRCS_NAME = algo.c							\
 			ft_memcpy.c						\
 			ft_strcmp.c						\
 			ft_strnew.c						\
-			getline.c						\
 			getnextline.c					\
 			main.c							\
 			init.c							\

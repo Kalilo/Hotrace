@@ -127,10 +127,6 @@ int					ft_strcmp(const char *s1, const char *s2);
 */
 char				*ft_strnew(size_t size);
 /*
-** getline.c
-*/
-int					get_line(int fd, char **line);
-/*
 ** getnextline.c
 */
 int					get_next_line(const int fd, char **line);
