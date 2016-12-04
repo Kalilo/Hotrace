@@ -55,7 +55,7 @@ void	ft_write(int fd, char const *s, size_t len)
 	}
 	if (c == WRITE_BUFF && !(c = 0))
 	{
-		write(fd, b, WRITE_BUFF + 1);
+		write(fd, b, WRITE_BUFF);
 		LOOP_END;
 	}
 }
