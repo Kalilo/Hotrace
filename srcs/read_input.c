@@ -34,6 +34,7 @@ static void	readkey(void)
 	{
 		get_next_line(0, &value);
 		clear_str(value);
+		clear_str(key);
 		store_link(key, value);
 	}
 	if (key && !*key)
