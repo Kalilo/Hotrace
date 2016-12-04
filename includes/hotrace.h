@@ -32,6 +32,7 @@
 ** ----------/
 */
 
+# define WRITE_BUFF 4096
 # define NEXT1(X) if(pos->X!=NULL)pos=pos->X;else return((&pos->X))
 # define NEXT2(X) if(pos->X!=NULL)pos=pos->X;else return 
 
@@ -144,6 +145,7 @@ t_query				*create_query(char *query);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
 void				ft_putchar(char const c);
+void				ft_write(int fd, char const *s, size_t len);
 /*
 ** read_input.c
 */
