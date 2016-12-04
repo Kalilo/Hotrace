@@ -51,10 +51,12 @@ static int		read_line(t_buff *buff)
 int				get_next_line(const int fd, char **line)
 {
 	static t_buff	buff;
+	unsigned int	k;
 
 	if (BUFF_SIZE < 1 || line == NULL)
 		return (-1);
 	buff.fd = fd;
+	k = 0;
 	if ((!buff.active || (buff.pos > buff.ret)) && !read_line(&buff))
 		return (buff.ret);
 	L = -1;
@@ -65,10 +67,10 @@ int				get_next_line(const int fd, char **line)
 		if (buff.buff[buff.pos] == '\n' || buff.buff[buff.pos] == 26)
 			break ;
 		if (((L + 1) % LINE_SIZE) == 0 || L == -1)
-			remalloc(&LINE, L);
+			RE_N_INC_L;
 		if (buff.buff[buff.pos] > 31 && buff.buff[buff.pos] < 127)
-			LINE[++L] = buff.buff[buff.pos];
-		buff.pos++;
+			LINE[L - k] = buff.buff[buff.pos];
+		E_INC;
 	}
 	*line = (L == -1) ? ft_strnew(4) : LINE;
 	buff.pos++;
