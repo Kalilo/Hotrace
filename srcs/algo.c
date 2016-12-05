@@ -29,11 +29,11 @@ t_link		**find_link_pos(t_link *pos, char *key)
 	k = 0;
 	while (pos != NULL)
 	{
-		if ( pos->key[k] > key[k])
+		if (pos->key[k] > key[k])
 		{
 			NEXT1(higher);
 		}
-		else if ( pos->key[k] < key[k])
+		else if (pos->key[k] < key[k])
 		{
 			NEXT1(lower);
 		}
@@ -55,11 +55,11 @@ void		search_for_key(t_link *pos, char *key)
 	g_ret = NULL;
 	while (pos != NULL)
 	{
-		if ( pos->key[k] > key[k])
+		if (pos->key[k] > key[k])
 		{
 			NEXT2(higher);
 		}
-		else if ( pos->key[k] < key[k])
+		else if (pos->key[k] < key[k])
 		{
 			NEXT2(lower);
 		}
