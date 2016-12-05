@@ -12,7 +12,7 @@
 
 #include "../includes/hotrace.h"
 
-void		readkey(void)
+void	readkey(void)
 {
 	char		*key;
 	char		*value;
