@@ -24,18 +24,16 @@ int			find_index(char key)
 
 t_link		**find_link_pos(t_link *pos, char *key)
 {
-	char	diff;
 	int		k;
 
 	k = 0;
 	while (pos != NULL)
 	{
-		diff = pos->key[k] - key[k];
-		if (diff > 0)
+		if ( pos->key[k] > key[k])
 		{
 			NEXT1(higher);
 		}
-		else if (diff < 0)
+		else if ( pos->key[k] < key[k])
 		{
 			NEXT1(lower);
 		}
@@ -51,19 +49,17 @@ t_link		**find_link_pos(t_link *pos, char *key)
 
 void		search_for_key(t_link *pos, char *key)
 {
-	char	diff;
 	int		k;
 
 	k = 0;
 	g_ret = NULL;
 	while (pos != NULL)
 	{
-		diff = pos->key[k] - key[k];
-		if (diff > 0)
+		if ( pos->key[k] > key[k])
 		{
 			NEXT2(higher);
 		}
-		else if (diff < 0)
+		else if ( pos->key[k] < key[k])
 		{
 			NEXT2(lower);
 		}
